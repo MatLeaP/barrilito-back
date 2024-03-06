@@ -23,9 +23,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 
 @Controller
-@RequestMapping("/api/category")
+@RequestMapping("/api/v1/category")
 @RequiredArgsConstructor
-@CrossOrigin(origins ="http://127.0.0.1:5173/")
+//@CrossOrigin(origins ="http://127.0.0.1:5173/")
 public class CategoryController {
 
     @Autowired
