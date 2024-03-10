@@ -36,7 +36,12 @@ public class AuthService {
             .build();
     }
 
-    public AuthResponse register(RegisterRequest request){
+    public AuthResponse register(RegisterRequest request) throws Exception{
+        System.out.println(request.getEmail());
+        if (request.getPassword() == null || request.getPassword().isEmpty()) {
+            throw new Exception("La contraseña es obligatoria"); // Personaliza el mensaje de error
+            
+          }
         UserEntity user = UserEntity.builder()
             .userName(request.getUserName())
             .email(request.getEmail())

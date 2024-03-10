@@ -15,9 +15,9 @@ import com.barrilito.barrilito.services.AuthService;
 import lombok.RequiredArgsConstructor;
 
 @RestController
-@RequestMapping("/auth")
+@RequestMapping("/api/v1/auth")
 @RequiredArgsConstructor
-//@CrossOrigin(origins ="http://127.0.0.1:5173/")
+@CrossOrigin(origins ="http://127.0.0.1:5173")
 public class AuthController {
 
     private final AuthService authService;
@@ -28,8 +28,8 @@ public class AuthController {
     }
 
     @PostMapping("/register")
-    public ResponseEntity<AuthResponse> register(@RequestBody RegisterRequest request){
-
+    public ResponseEntity<AuthResponse> register(@RequestBody RegisterRequest request) throws Exception{
+        System.out.println(request);
         return ResponseEntity.ok(authService.register(request));
     }
 }
